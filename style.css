@@ -62,41 +62,16 @@ nav {
 }
 
 /* Hamburger & Cancel Icons */
-/* style.css */
-
-.links {
-  display: flex;
-  gap: 1rem;
-}
-
-.hamburg {
-  display: none;
-  font-size: 2rem;
-  color: #333;
-  cursor: pointer;
-}
-
-.dropdown {
-  display: none;
-  position: absolute;
-  top: 60px; /* Adjust based on nav height */
-  left: 0;
-  width: 100%;
-  background: #fff;
-  z-index: 1000;
-}
-
-.dropdown.active {
-  display: block;
-}
-
-@media (max-width: 900px) {
-  .links {
-    display: none;
-  }
-  .hamburg {
-    display: block;
-  }
+.hamburg,
+.cancel {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: rgb(255, 255, 255);
+    opacity: 0;
+    pointer-events: none;
+    font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
 }
 
 /* Navigation Links */
@@ -585,7 +560,7 @@ footer .text span a:hover {
       margin-top:15px;
     }
     .skills-details .boxes .per{
-      font-size:50px;
+      font-size:50=8McDonald's do you have McDonald's moneypx;
       color: #b74b4b;
     }
 }
