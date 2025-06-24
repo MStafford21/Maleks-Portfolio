@@ -62,17 +62,37 @@ nav {
 }
 
 /* Hamburger & Cancel Icons */
-.hamburg,
-.cancel {
-    cursor: pointer;
-    position: absolute;
-    right: 15px;
-    top: 10px;
-    color: rgb(255, 255, 255);
-    opacity: 0;
-    pointer-events: none;
-    font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
+/* Basic Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.header { width: 100%; }
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: #333; }
+.nav-logo { color: #fff; font-size: 2rem; text-decoration: none; }
+
+.nav-menu { display: flex; gap: 2rem; }
+.nav-item { list-style: none; }
+.nav-link { color: #fff; text-decoration: none; font-size: 1.2rem; }
+
+.hamburger { display: none; flex-direction: column; cursor: pointer; }
+.bar { width: 25px; height: 3px; background: #fff; margin: 4px 0; border-radius: 2px; }
+
+@media (max-width: 768px) {
+  .nav-menu { 
+    flex-direction: column;
+    position: fixed;
+    left: -100%;
+    top: 5rem;
+    background: #fff;
+    width: 100%;
+    transition: 0.3s;
+    text-align: center;
+    box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+  }
+  .nav-menu.active { left: 0; }
+  .nav-link { color: #333; padding: 1.5rem 0; }
+  .hamburger { display: flex; }
 }
+
 
 /* Navigation Links */
 .nav-container .links {
