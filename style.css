@@ -338,10 +338,11 @@ section .button {
 }
 
 section .button button {
+    width: auto;
     outline: none;
-    padding: 8px 16px;
+    padding: 16px 16px;
     border-radius: 4px;
-    font-size: 25px;
+    font-size: 100%;
     font-weight: 400;
     background:#b74b4b;
     color: white;
@@ -538,11 +539,17 @@ footer .text span a:hover {
         width:100%;
         margin-bottom:50px;
     }
-    .skills-details .boxes{
-        justify-content:center;
-        align-items:center;
-        width:100%;
-    }
+    .skills-details .boxes {
+        
+    display: flex;              
+    flex-wrap: wrap;            
+    justify-content: center;    
+    align-items: center;        
+    width: auto;                
+    gap: 30px;                  
+    box-sizing: border-box;     
+                            }
+
     .contact .text{
         width:100%;
     }
@@ -558,9 +565,5 @@ footer .text span a:hover {
     }
     .main-container button{
       margin-top:15px;
-    }
-    .skills-details .boxes .per{
-      font-size:50=8McDonald's do you have McDonald's moneypx;
-      color: #b74b4b;
     }
 }
