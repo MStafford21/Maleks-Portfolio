@@ -546,7 +546,7 @@ footer .text span a:hover {
     justify-content: center;    
     align-items: center;        
     width: auto;                
-    gap: 30px;                  
+    gap: 100%;                  
     box-sizing: border-box;     
                             }
 
