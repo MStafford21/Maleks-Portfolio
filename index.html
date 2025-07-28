@@ -11,34 +11,36 @@
 <body>
 
     <!-- Navigation Menu -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
-                <span>Malek Stafford</span>
-            </div>
-            <div class="links">
-                <div class="link" data-aos-duration="1500" data-aos-delay="100"><a href="Index.html">Home</a></div>
-                <div class="link" data-aos-duration="1500" data-aos-delay="200"><a href="about.html">About</a></div>
-                <div class="link" data-aos-duration="1500" data-aos-delay="300"><a href="skills.html">Skills</a></div>
-                <div class="link" data-aos-duration="1500" data-aos-delay="400"><a href="experiences.html">Experience</a></div>
-                <div class="link" data-aos-duration="1500" data-aos-delay="500"><a href="contact.html">Contact</a></div>
-            </div>
-            <!-- Fixed Font Awesome icon -->
-            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
-        </div>
-        <div class="dropdown">
-            <div class="links">
-                <!-- Fixed typo in "href" -->
-                <a href="Index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="skills.html">Skills</a>
-                <a href="experiences.html">Experience</a>
-                <a href="contact.html">Contact</a>
-                <!-- Fixed Font Awesome icon -->
-                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
-            </div>
-        </div>
-    </nav>
+    <!-- ✅ UPDATED Navigation Menu -->
+<nav>
+  <div class="nav-container">
+    <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+      <span>Malek Stafford</span>
+    </div>
+    <div class="links">
+      <div class="link"><a href="index.html">Home</a></div>
+      <div class="link"><a href="about.html">About</a></div>
+      <div class="link"><a href="skills.html">Skills</a></div>
+      <div class="link"><a href="experiences.html">Experience</a></div>
+      <div class="link"><a href="contact.html">Contact</a></div>
+    </div>
+    <!-- Hamburger and X icons -->
+    <i class="fa-solid fa-bars hamburg" onclick="openMenu()"></i>
+    <i class="fa-solid fa-xmark cancel" onclick="closeMenu()"></i>
+  </div>
+
+  <!-- ✅ Dropdown that shows when hamburger is clicked -->
+  <div class="dropdown">
+    <div class="links">
+      <a href="index.html" onclick="closeMenu()">Home</a>
+      <a href="about.html" onclick="closeMenu()">About</a>
+      <a href="skills.html" onclick="closeMenu()">Skills</a>
+      <a href="experiences.html" onclick="closeMenu()">Experience</a>
+      <a href="contact.html" onclick="closeMenu()">Contact</a>
+    </div>
+  </div>
+</nav>
+
 
     <!-- Main Section -->
     <section>
@@ -88,7 +90,7 @@
             <p>Growing up my love for technology guided me towards the path of becoming a software engineer/developer. With 
                 this goal in mind I have tried my best to go the extra mile to earn my degree in Computer Science and achieve
                 that goal. The chance to help my employer and increase functionality while making the business run smoothly is
-                always #1 priority for me. </p>
+                always #1 priority for me.</p>
                 </div>
             <div class="button" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400">
                 <a href="Malek_work_res.pdf" download="Malek_work_res.pdf">
@@ -184,5 +186,26 @@
   AOS.init({offset:0});
 </script>
 <script src="script.js"></script>
+<script>
+  function openMenu() {
+    document.querySelector('.dropdown').classList.add('active');
+    document.querySelector('.hamburg').style.display = 'none';
+    document.querySelector('.cancel').style.display = 'block';
+  }
+
+  function closeMenu() {
+    document.querySelector('.dropdown').classList.remove('active');
+    document.querySelector('.cancel').style.display = 'none';
+    document.querySelector('.hamburg').style.display = 'block';
+  }
+
+  // Optional: Auto-close dropdown on resize to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 968) {
+      closeMenu();
+    }
+  });
+</script>
+
 </body>
 </html>
