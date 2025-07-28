@@ -11,19 +11,33 @@
 <body>
 
     <nav>
-        <div class="nav-container">
-            <div class="logo" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="100">
-                <span>Malek Stafford</span>
-            </div>
-            <div class="links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="skills.html">Skills</a>
-                <a href="experiences.html">Experience</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </div>
-    </nav>
+  <div class="nav-container">
+    <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+      <span>Malek Stafford</span>
+    </div>
+    <div class="links">
+      <div class="link"><a href="index.html">Home</a></div>
+      <div class="link"><a href="about.html">About</a></div>
+      <div class="link"><a href="skills.html">Skills</a></div>
+      <div class="link"><a href="experiences.html">Experience</a></div>
+      <div class="link"><a href="contact.html">Contact</a></div>
+    </div>
+    <!-- Hamburger and X icons -->
+    <i class="fa-solid fa-bars hamburg" onclick="openMenu()"></i>
+    <i class="fa-solid fa-xmark cancel" onclick="closeMenu()"></i>
+  </div>
+
+  <!-- ✅ Dropdown that shows when hamburger is clicked -->
+  <div class="dropdown">
+    <div class="links">
+      <a href="index.html" onclick="closeMenu()">Home</a>
+      <a href="about.html" onclick="closeMenu()">About</a>
+      <a href="skills.html" onclick="closeMenu()">Skills</a>
+      <a href="experiences.html" onclick="closeMenu()">Experience</a>
+      <a href="contact.html" onclick="closeMenu()">Contact</a>
+    </div>
+  </div>
+</nav>
 
     <section class="about">
         <div class="content"data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
@@ -72,5 +86,26 @@
       AOS.init({offset:0});
     </script>
     <script src="script.js"></script>
+    <script>
+  function openMenu() {
+    document.querySelector('.dropdown').classList.add('active');
+    document.querySelector('.hamburg').style.display = 'none';
+    document.querySelector('.cancel').style.display = 'block';
+  }
+
+  function closeMenu() {
+    document.querySelector('.dropdown').classList.remove('active');
+    document.querySelector('.cancel').style.display = 'none';
+    document.querySelector('.hamburg').style.display = 'block';
+  }
+
+  // Optional: Auto-close dropdown on resize to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 968) {
+      closeMenu();
+    }
+  });
+</script>
+
 </body>
 </html>
