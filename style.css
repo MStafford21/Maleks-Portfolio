@@ -396,9 +396,10 @@ section .title span::after {
     width: 45%;
 }
 .about .right .topic {
-    color: rgb(77, 77, 77);
+    color: rgb(255, 255, 255);
     width: 40%;
 }
+
 
 .about .left img {
     height: 400px;
